@@ -23,6 +23,7 @@ public class Calculadora extends Frame implements ActionListener {
     // Fuente para todos los botones
     Font fuente = new Font("Monospaced", Font.BOLD, 24);
     
+    // Constructor de la clase
     public Calculadora() {
         this.setBackground(Color.GRAY); // Fondo del Frame del color gris
 
@@ -35,7 +36,7 @@ public class Calculadora extends Frame implements ActionListener {
         display.setFont(new Font("Monospaced", Font.BOLD, 70));
         display.setForeground(Color.GRAY); // Color de la letra
         display.setBackground(Color.WHITE);
-        // Blanco para diferenciarlo del color gris del Frame
+        // Fondo Blanco para diferenciarlo del color gris del Frame
         
         /* 
         Creo el Panel números con GridLayout para que los números tengan 
@@ -79,7 +80,7 @@ public class Calculadora extends Frame implements ActionListener {
         
         but6 = new Button ("6");
         but6.addActionListener(this);
-        but6.setForeground(new Color(28, 40, 51)); // O crearlo. Los numeros
+        but6.setForeground(new Color(28, 40, 51)); // Crearlo. Los numeros
         but6.setFont(fuente); // indican la cantidad de (rojo, verde, azul)
         numeros.add(but6);
         
@@ -155,7 +156,7 @@ public class Calculadora extends Frame implements ActionListener {
         gcon.weightx = 1;
         gcon.weighty = 1;
         gcon.fill = GridBagConstraints.BOTH; 
-        // BOTH para que los componentes tengan un tamaño igual
+        // BOTH para que los componentes ocupen las celdas
         
         // Introduzco el Panel Display
         gcon.gridy = 0; // El displayPanel empieza en la fila cero.
@@ -197,13 +198,13 @@ public class Calculadora extends Frame implements ActionListener {
         } ); 
     }
     
-    // En un mismo método, le doy función a cada uno de los botones
+    // En un mismo método, le doy acción a cada uno de los botones
     public void actionPerformed(ActionEvent e) {
         if(e.getSource() == but0){ // Cuando pulsamos el botón 0
-            s3 = display.getText(); // El display obtiene el texto del but 0
-            s4 = "0"; // Nos muestra un cero
+            s3 = display.getText(); // El display obtiene el texto
+            s4 = "0";
             s5 = s3 + s4; // A lo que había en el display, le suma en este caso 0
-            display.setText(s5); // Muestra en el display la última cifra introducida
+            display.setText(s5); // Muestra en el display la última cifra introducida (en este caso 0)
         }
         // Lo mismo para el resto de botones
         if(e.getSource() == but1){
@@ -263,7 +264,7 @@ public class Calculadora extends Frame implements ActionListener {
         if(e.getSource() == sumar){
             s1 = display.getText();
             display.setText(""); // Cadena vacía para vaciar el display
-            //pulsar un operador e introducir otro numero
+            // pulsar un operador e introducir otro numero
             c = 1; // Al pulsar +, caso 1
         }
         if(e.getSource() == restar){
